@@ -1,6 +1,6 @@
 /*
- * app/screens/Home/styles.js
- * Styles for Home.
+ * app/screens/LogIn/styles.js
+ * Styles for LogIn.
  */
 
 import { StyleSheet } from 'react-native';

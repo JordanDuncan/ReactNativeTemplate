@@ -5,11 +5,12 @@
 
 import { StyleSheet } from 'react-native';
 
-import { fullFlexContainer } from 'app/config/styles';
+import { fullFlexContainer, centerChildren } from 'app/config/styles';
 
 export default styles = StyleSheet.create({
   container : {
     ...fullFlexContainer,
+    ...centerChildren,
     backgroundColor: '#FFFFFF'
   },
   avatar: {

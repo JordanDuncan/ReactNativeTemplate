@@ -6,15 +6,14 @@
  */
 
 export const colors = {
-  primary: '#009688',
-  primaryText: '#E0F2F1'
+  primary : '#009688',
+  primaryText : '#E0F2F1',
+  fadedText : '#CCC'
 };
 
 export const fullFlexContainer = {
   flex: 1,
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center'
+  flexDirection: 'column'
 };
 
 export const centerChildren = {

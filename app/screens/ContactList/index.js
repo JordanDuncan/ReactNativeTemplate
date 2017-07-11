@@ -28,8 +28,6 @@ import FullWithHeader from 'app/layouts/FullWithHeader';
 import styles from './styles';
 
 class ContactList extends Component {
-  state = { contacts : [] };
-
   // Define tab options
   static navigationOptions = {
     tabBarLabel: 'Contacts',
@@ -43,6 +41,10 @@ class ContactList extends Component {
     super(props);
     this.props.ContactActions.retrieveContacts();
   };
+
+  _onRefresh = () => {
+    this.props.ContactActions.retrieveContacts();
+  }
 
   // following 3 functions are used by FlatList
   _keyExtractor = (item, index) => item.id;
@@ -61,14 +63,16 @@ class ContactList extends Component {
   );
 
   render() {
+    let state = this.props.contacts
     return (
       <FullWithHeader title="Contacts">
         <FlatList
           style={styles.flatlist}
-          data={this.props.contacts.contacts}
-          extraData={this.state}
+          data={state.contacts}
           keyExtractor={this._keyExtractor}
           renderItem={this._renderItem}
+          onRefresh={this._onRefresh.bind(this)}
+          refreshing={state.refreshing}
         />
       </FullWithHeader>
     );

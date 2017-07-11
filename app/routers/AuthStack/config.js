@@ -6,21 +6,18 @@
 import { StackNavigator } from 'react-navigation';
 
 import * as Screens from 'app/config/screens';
-import MainTabs from 'app/routers/MainTabs';
 
 // configure the screens that will be accessible in this router
 const routeConfiguration = {
-  MainTabs : { 
-    screen: MainTabs 
-  },
-  ContactDetail : { 
-    screen: Screens.ContactDetail
+  LogIn : {
+    screen : Screens.LogIn
   }
 };
 
 // navigator config (docs on react-navigation website.)
 const navigatorConfiguration = { 
-  headerMode: 'none'
+  headerMode: 'none',
+  gesturesEnabled: true
 };
 
-export const MainStack = StackNavigator(routeConfiguration, navigatorConfiguration);
+export const AuthStack = StackNavigator(routeConfiguration, navigatorConfiguration);

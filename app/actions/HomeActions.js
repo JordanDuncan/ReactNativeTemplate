@@ -7,8 +7,6 @@
  *  - downloadDataSuccess is linked to a reducer that updates the app state with the new data
  */
 
-import { NavigationActions } from 'react-navigation';
-
 import * as types from './types';
 
 export function setString(str) {

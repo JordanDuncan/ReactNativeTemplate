@@ -5,8 +5,14 @@
  * This will allow you to easily swap out screen references in future.
  */
 
-import Home from 'app/screens/Home';
 import ContactDetail from 'app/screens/ContactDetail';
 import ContactList from 'app/screens/ContactList';
+import Home from 'app/screens/Home';
+import LogIn from 'app/screens/LogIn';
 
-export { Home, ContactDetail, ContactList };
+export {
+  ContactDetail,
+  ContactList,
+  Home,
+  LogIn
+};

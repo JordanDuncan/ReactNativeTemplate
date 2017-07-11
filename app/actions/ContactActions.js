@@ -9,21 +9,28 @@ import * as types from './types';
 
 export function retrieveContacts() {
   return function (dispatch) {
-    return fetch('https://reqres.in/api/users')
+    dispatch(refreshContacts());
+    
+    fetch('https://reqres.in/api/users?page=' + (Math.floor(Math.random() * 4) + 1))
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log(responseJson);
       dispatch(updateContacts(responseJson.data));
     })
     .catch((error) => {
-      console.error(error);
+      dispatch(updateContacts())
     });
   }
 }
 
+export function refreshContacts() {
+  return {
+    type : types.CONTACTS_REFRESHING
+  };
+}
+
 export function updateContacts(res) {
   return {
-    type: types.UPDATE_CONTACTS,
+    type: types.CONTACTS_UPDATE,
     contacts: res
   };
 }
